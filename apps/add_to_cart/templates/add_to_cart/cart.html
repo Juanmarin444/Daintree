@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="company_title">
+      <h1>Daintree</h1>
+    </div>
+    <div id="page_title">
+      <h2>Cart</h2>
+    </div>
+    <div id="cart">
+      {% for key in request.session.order %}
+        {{ key }}
+      {% endfor %}
+    </div>
+    <div id="go_back">
+      <form action="/" method="post">
+        {% csrf_token %}
+        <input type="submit" name="go_back" value="go_back" />
+      </form>
+    </div>
+    <div id="clear_cart">
+      <form action="/clear_cart" method="post">
+        {% csrf_token %}
+        <input type="submit" name="clear_cart" value="clear" />
+      </form>
+    </div>
+  </body>
+</html>

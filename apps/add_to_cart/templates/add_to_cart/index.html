@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Daintree</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="company_title">
+        <h1>Daintree</h1>
+      </div>
+      <div id="page_title">
+        <h2>Choose A CPU</h2>
+      </div>
+      <div id="form">
+        <table>
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Core Count</th>
+            </tr>
+            <tr>
+              <td>AMD Ryzen 7 3800x</td>
+              <td>$338.99</td>
+              <td>8</td>
+              <td>
+                <form action='/add' method='post'>
+                  {% csrf_token %}
+                  <select name='quantity'>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                  <input type='hidden' name='product_id' value='1015' />
+                  <input type='submit' value='Add' />
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>AMD Ryzen 5 3600x</td>
+              <td>$199.99</td>
+              <td>6</td>
+              <td>
+                <form action='/add' method='post'>
+                  {% csrf_token %}
+                  <select name='quantity'>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                  <input type='hidden' name='product_id' value='1016' />
+                  <input type='submit' value='Add' />
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
